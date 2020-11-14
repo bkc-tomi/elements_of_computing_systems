@@ -1,0 +1,13 @@
+/* 
+Not gate
+input in
+putput out
+If in=0 then out=1 else out=0
+*/
+
+CHIP MyNot {
+    In in;
+    OUT out;
+    PARTS:
+    Nand()
+}
