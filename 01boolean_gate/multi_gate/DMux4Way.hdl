@@ -16,5 +16,9 @@ CHIP DMux4Way {
     OUT a, b, c, d;
 
     PARTS:
-    // Put your code here:
+    // a, b またはc, dを選択
+    DMux(in=in, sel=sel[1], a=tempa, b=tempb);
+    // a または b, c または d
+    DMux(in=tempa, sel=sel[0], a=a, b=b);
+    DMux(in=tempb, sel=sel[0], a=c, b=d);
 }
