@@ -14,17 +14,12 @@ CHIP Or {
     OUT out;
 
     PARTS:
-    // Xor
+    // Not(a)
     Nand(a=a, b=a, out=nota);
-    Nand(a=nota, b=b, out=x);
+
+    // Not(b)
     Nand(a=b, b=b, out=notb);
-    Nand(a=a, b=notb, out=y);
-    Nand(a=x, b=y, out=xor);
-
-    // Not Xor
-    Nand(a=xor, b=xor, out=notxor);
-    // Nand
-    Nand(a=a, b=b, out=nand);
-
-    Nand(a=notxor, b=nand, out=out);
+    
+    // Nand(nota, notb)
+    Nand(a=nota, b=notb, out=out);
 }

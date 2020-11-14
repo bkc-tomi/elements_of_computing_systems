@@ -25,12 +25,7 @@ CHIP Mux {
     Nand(a=tempb, b=tempb, out=andb);
 
     // Or(anda, andb)
-    Nand(a=anda, b=andb, out=nota);
-    Nand(a=nota, b=andb, out=x);
+    Nand(a=anda, b=anda, out=nota);
     Nand(a=andb, b=andb, out=notb);
-    Nand(a=anda, b=notb, out=y);
-    Nand(a=x, b=y, out=xor);
-    Nand(a=xor, b=xor, out=notxor);
-    Nand(a=anda, b=andb, out=nand);
-    Nand(a=notxor, b=nand, out=out);
+    Nand(a=nota, b=notb, out=out);
 }
