@@ -27,6 +27,12 @@ D;JEQ // Jump XXX if D = 0
 @YYY
 D;JGT // Jump YYY if D > 0
 ```
+以下のように@value, @argの指定の後に複数の操作を行うこともできる。これでアクセスしたいメモリーアドレスを指定できる。
+```
+@0
+A=D
+M=0
+```
 
 ```asm:fill.asm
 @SCREEN
